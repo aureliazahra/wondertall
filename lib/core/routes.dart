@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wondertall/data/models/destination.dart';
 import 'package:wondertall/ui/screen/destination_detail_screen.dart';
 import 'package:wondertall/ui/screen/home_screen.dart';
 import 'package:wondertall/ui/screen/onboarding_screen.dart';
@@ -13,8 +14,8 @@ class AppRoutes {
 
   static Map<String, WidgetBuilder> routes = {
     onboarding: (_) => const OnboardingScreen(),
-    signin: (_) => const SigninScreen(),
-    home: (_) => const HomeScreen();
+    signin: (_) => const SignInScreen(),
+    home: (_) => const HomeScreen()
   };
 }
 

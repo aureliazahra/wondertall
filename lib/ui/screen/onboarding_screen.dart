@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:wondertall/core/constanst.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:wondertall/core/theme.dart';
+import 'package:wondertall/ui/widgets/primary_button.dart';
+import 'package:wondertall/core/routes.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -65,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 29),
               child: Align(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.center,
                 child: SmoothPageIndicator(
                   controller: controller,
                   count: items.length,
@@ -87,17 +89,53 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 onPointerUp: (_) => setState(() {
                   _pausedByUser = false;
                 }),
+                child: PageView.builder(
+                  controller: controller,
+                  itemCount: items.length,
+                  onPageChanged: (i) => setState(() => current = i),
+                  itemBuilder: (_, i) => _page(items[i]),
+                ),
               ),
             ),
           ],
         ),
       ),
-      bottomNavigationBar: Padding(padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            PrimaryButton(
+              label: 'Get Started',
+              trailing: Icons.arrow_forward_rounded,
+              onPressed: () => Navigator.pushReplacementNamed(context, AppRoutes.signin),
+            ),
+            const SizedBox(height: 14),
+            const Text(
+              'Dengan melanjutkan, kamu setuju bahwa pihak lain memakai data aplikasi untuk meningkatkan pengalaman di aplikasi.',
+              textAlign: TextAlign.center,
+              style: TextStyle(color: AppColors.textSecondary, fontSize: 12),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _page(_ObItem item) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.fromLTRB(20, 30, 20, 0),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         children: [
+          // Bagian gambar (yang auto-slide)
+          ClipRRect(
+            borderRadius: BorderRadius.circular(16),
+            child: Image.asset(item.image, height: 320, fit: BoxFit.cover),
+          ),
+          const SizedBox(height: 16),
+          
         ],
-      ),),
+      ),
     );
   }
 }
