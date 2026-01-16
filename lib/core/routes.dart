@@ -4,6 +4,7 @@ import 'package:wondertall/ui/screen/home_screen.dart';
 import 'package:wondertall/ui/screen/onboarding_screen.dart';
 import 'package:wondertall/ui/screen/signin_screen.dart';
 
+
 class AppRoutes {
   static const onboarding = '/';
   static const signin = '/signin';
