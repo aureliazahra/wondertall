@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wondertall/pages/splash.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen()
+      home: const Placeholder()
     );
   }
 }
