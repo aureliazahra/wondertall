@@ -17,9 +17,7 @@ class AppRoutes {
     signin: (_) => const SignInScreen(),
     home: (_) => const HomeScreen()
   };
-}
-
-Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
   if (settings.name == AppRoutes.detail) {
     final dest = settings.arguments as Destination;
     return MaterialPageRoute(
@@ -28,3 +26,7 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
   }
   return null;
 }
+  
+}
+
+

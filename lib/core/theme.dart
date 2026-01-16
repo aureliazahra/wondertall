@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppColors {
-  static const primary = Color(0xFF2F6FED);
+  static const primary = Color(0xFF1457BC);
   static const primaryDark = Color(0xFF1F53D5);
   static const gradientStart = Color(0xFF2F6FED);
   static const gradientEnd = Color(0xFF1B5CFF);

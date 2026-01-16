@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wondertall/core/routes.dart';
+import 'package:wondertall/core/theme.dart';
 import 'package:wondertall/ui/screen/onboarding_screen.dart';
+
 
 class WondertallApp extends StatelessWidget {
   const WondertallApp({super.key});
@@ -9,7 +12,10 @@ class WondertallApp extends StatelessWidget {
     return MaterialApp(
       title: 'Wondertall',
       debugShowCheckedModeBanner: false,
-      home: OnboardingScreen(),
+      theme: AppTheme.light(),
+      initialRoute: AppRoutes.onboarding,
+      routes: AppRoutes.routes,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }

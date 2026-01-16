@@ -20,9 +20,9 @@ class PrimaryButton extends StatelessWidget {
     final child = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.w600)),
+        Text(label, style: const TextStyle(fontWeight: FontWeight.w600, color: Colors.white)),
         if (trailing != null) const SizedBox(width: 8),
-        if (trailing != null) Icon(trailing, size: 20),
+        if (trailing != null) Icon(trailing, size: 20, color: Colors.white,),
       ],
     );
 
@@ -32,7 +32,7 @@ class PrimaryButton extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           gradient: const LinearGradient(
-            colors: [AppColors.gradientStart, AppColors.gradientEnd],
+            colors: [AppColors.primary, AppColors.primaryDark],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
