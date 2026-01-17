@@ -3,6 +3,7 @@ import '../../../core/routes.dart';
 import '../../../core/theme.dart';
 import 'package:wondertall/ui/widgets/primary_button.dart';
 import 'package:wondertall/ui/widgets/gradient_bg.dart';
+import 'package:wondertall/core/constanst.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -28,24 +29,29 @@ class _SignInScreenState extends State<SignInScreen> {
               // Branding (sebagai pengganti logo + latar gradien)
               Container(
                 height: 120,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [AppColors.gradientStart, AppColors.gradientEnd],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
-                ),
-                child: const Center(
-                  child: Text(
-                    'WonderTrail',
-                    style: TextStyle(color: Colors.white, fontSize: 26, fontWeight: FontWeight.w800),
+                child: Center(
+                  child: Column(
+                    children: [
+                      SizedBox(height: 20),
+                      Image.asset(Assets.logo),
+                      Text(
+                        'WonderTrail',
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontSize: 26,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
               const SizedBox(height: 26),
               const Center(
-                child: Text('Sign in', style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700)),
+                child: Text(
+                  'Sign in',
+                  style: TextStyle(fontSize: 26, fontWeight: FontWeight.w700),
+                ),
               ),
               const SizedBox(height: 6),
               const Center(
@@ -58,7 +64,10 @@ class _SignInScreenState extends State<SignInScreen> {
               TextField(
                 controller: email,
                 keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(labelText: 'Email', hintText: 'user@example.com'),
+                decoration: const InputDecoration(
+                  labelText: 'Email',
+                  hintText: 'user@example.com',
+                ),
               ),
               const SizedBox(height: 14),
               TextField(
@@ -67,7 +76,11 @@ class _SignInScreenState extends State<SignInScreen> {
                 decoration: InputDecoration(
                   labelText: 'Password',
                   suffixIcon: IconButton(
-                    icon: Icon(obscured ? Icons.visibility_off_outlined : Icons.visibility_outlined),
+                    icon: Icon(
+                      obscured
+                          ? Icons.visibility_off_outlined
+                          : Icons.visibility_outlined,
+                    ),
                     onPressed: () => setState(() => obscured = !obscured),
                   ),
                 ),
@@ -85,13 +98,14 @@ class _SignInScreenState extends State<SignInScreen> {
                   TextButton(
                     onPressed: () {},
                     child: const Text('Forgot Password ?'),
-                  )
+                  ),
                 ],
               ),
               const SizedBox(height: 6),
               PrimaryButton(
                 label: 'Sign in',
-                onPressed: () => Navigator.pushReplacementNamed(context, AppRoutes.home),
+                onPressed: () =>
+                    Navigator.pushReplacementNamed(context, AppRoutes.home),
               ),
               const SizedBox(height: 18),
               Row(
@@ -117,7 +131,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   const Text("Don't have an account? "),
                   TextButton(onPressed: () {}, child: const Text('Sign Up')),
                 ],
-              )
+              ),
             ],
           ),
         ),
