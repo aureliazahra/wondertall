@@ -23,4 +23,5 @@ class Assets {
   static const gallery3 = 'assets/images/gallery3.png';
   static const gallery4 = 'assets/images/gallery4.png';
   static const gallery5 = 'assets/images/gallery5.png';
+  static const profil = 'assets/images/profil.jpg';
 }

@@ -4,7 +4,6 @@ import 'package:wondertall/ui/widgets/gradient_header.dart';
 import 'package:wondertall/ui/widgets/search_field.dart';
 import 'package:wondertall/ui/widgets/section_header.dart';
 import '../../../core/routes.dart';
-import 'package:wondertall/ui/screen/destination_detail_screen.dart';
 import 'package:wondertall/data/dummy.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -20,9 +19,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const GradientHeader(name: 'Shin Tae Yong'),
-
-            // Area putih overlap di atas header dengan rounded top
+            const GradientHeader(name: 'Cewenya Choi San'),
             Transform.translate(
               offset: const Offset(0, -overlap),
               child: Container(
@@ -37,7 +34,6 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Teks hero
                     RichText(
                       text: TextSpan(
                         style: const TextStyle(
@@ -60,20 +56,17 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
 
-                    // Search Field
                     const SearchField(),
                     const SizedBox(height: 16),
 
-                    // Section Header
                     const SectionHeader(title: 'Popular Destination'),
                     const SizedBox(height: 12),
 
-                    // List horizontal destinasi
                     SizedBox(
                       height: 320,
                       child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        padding: EdgeInsets.zero, // sudah ada padding dari Container
+                        padding: EdgeInsets.zero,
                         itemCount: destination.length,
                         itemBuilder: (context, i) {
                           final d = destination[i];

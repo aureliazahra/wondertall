@@ -25,7 +25,7 @@ class GradientHeader extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 20,
-            backgroundImage: const AssetImage(Assets.gallery1),
+            backgroundImage: const AssetImage(Assets.profil),
             backgroundColor: Colors.white70,
           ),
           const SizedBox(width: 12),
