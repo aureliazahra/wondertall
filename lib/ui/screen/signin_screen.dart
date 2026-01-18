@@ -18,6 +18,25 @@ class _SignInScreenState extends State<SignInScreen> {
   bool remember = false;
   bool obscured = true;
 
+  void _onSignIn() {
+    final em = email.text.trim();
+    final pw = pass.text;
+
+    if (em.isEmpty || pw.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Email dan Password wajib diisi')),
+      );
+      return;
+    }
+
+    // Kirim data yang diinput (misal email) sebagai nama untuk header Home
+    Navigator.pushReplacementNamed(
+      context,
+      AppRoutes.home,
+      arguments: em,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,8 +123,7 @@ class _SignInScreenState extends State<SignInScreen> {
               const SizedBox(height: 6),
               PrimaryButton(
                 label: 'Sign in',
-                onPressed: () =>
-                    Navigator.pushReplacementNamed(context, AppRoutes.home),
+                onPressed: _onSignIn,
               ),
               const SizedBox(height: 18),
               Row(
