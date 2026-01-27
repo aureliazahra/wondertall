@@ -25,7 +25,7 @@ class DestinationCard extends StatelessWidget {
               color: const Color(0xFF111827).withOpacity(.06),
               blurRadius: 16,
               offset: const Offset(0, 8),
-            )
+            ),
           ],
         ),
         child: Column(
@@ -39,8 +39,9 @@ class DestinationCard extends StatelessWidget {
                     topLeft: Radius.circular(18),
                     topRight: Radius.circular(18),
                   ),
-                  child: AspectRatio(
-                    aspectRatio: 16 / 10,
+                  child: SizedBox(
+                    height: 200, // <— ini kuncinya
+                    width: double.infinity,
                     child: Image.asset(destination.imageUrl, fit: BoxFit.cover),
                   ),
                 ),
@@ -49,9 +50,12 @@ class DestinationCard extends StatelessWidget {
                   top: 12,
                   child: CircleAvatar(
                     backgroundColor: Colors.white.withOpacity(.85),
-                    child: const Icon(Icons.favorite_border, color: AppColors.primary),
+                    child: const Icon(
+                      Icons.favorite_border,
+                      color: AppColors.primary,
+                    ),
                   ),
-                )
+                ),
               ],
             ),
             const SizedBox(height: 12),
@@ -70,7 +74,10 @@ class DestinationCard extends StatelessWidget {
                 destination.name,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 16),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16,
+                ),
               ),
             ),
             const SizedBox(height: 6),
@@ -79,7 +86,11 @@ class DestinationCard extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
               child: Row(
                 children: [
-                  const Icon(Icons.location_on_outlined, size: 18, color: AppColors.textSecondary),
+                  const Icon(
+                    Icons.location_on_outlined,
+                    size: 18,
+                    color: AppColors.textSecondary,
+                  ),
                   const SizedBox(width: 4),
                   Expanded(
                     child: Text(
