@@ -141,9 +141,14 @@ class _DestinationDetailScreenState extends State<DestinationDetailScreen>
                       const Text('About Destination',
                           style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16)),
                       const SizedBox(height: 8),
-                      const Text(
-                        'You will get a complete travel package on the beaches. Packages in the form of airline tickets, recommended Hotel rooms, Transportation. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In malesuada dolor sit amet, consectetur adipiscing elit. Aenean congue, neque a sollicitudin tempus, nisi quam euismod magna.',
-                        style: TextStyle(color: AppColors.textSecondary, height: 1.5),
+                      SizedBox(
+                        height: 160,
+                        child: SingleChildScrollView(
+                          child: const Text(
+                            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse elementum, ligula at luctus volutpat, tortor libero gravida turpis, vitae lacinia massa tellus non justo. Praesent dictum feugiat libero, in tincidunt lorem lacinia ut. Sed eu lectus pretium, laoreet leo ac, fermentum ipsum. Suspendisse volutpat, lectus nec volutpat accumsan, magna nibh egestas lorem, vel facilisis nisl neque id tortor. Quisque non tellus eu arcu ullamcorper suscipit nec eu ipsum. Duis consequat egestas lacus, in sodales turpis blandit non. In pharetra pretium felis, eget dapibus lacus vehicula a.',
+                            style: TextStyle(color: AppColors.textSecondary, height: 1.5),
+                          ),
+                        ),
                       ),
                       const SizedBox(height: 20),
                     ],
